@@ -11,17 +11,19 @@ function App() {
     <Router >
       <div className="App">
         <Nav />
-        <Route path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/shop" component={Shop} />
+        <Switch >
+          <Route path="/" exact component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/shop" component={Shop} />
+        </Switch>
       </div>
     </Router>
   );
 }
 
-// ! Problem - If we don't use the switch then the Route will render the Home page even if we go to the url "/about" or "/shop"
-// * Because as soon as Route encounter the "/" it will render the Home page , it will not check the text present after the "/"  
-// Explanation - https://www.youtube.com/watch?v=Law7wfdg_ls&t=155s 10:50
+// * Switch - it stops rendering the further text as soon as it find the searched url
+// ! Problem - It will stop at "/" & renders "Home" even if you want to go to "/about"
+// Solution - add "exact" to the home Route
 const Home = () => (
   <div>
     <h1>Home page</h1>
