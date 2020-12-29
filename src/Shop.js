@@ -1,7 +1,8 @@
 import React,{ useState, useEffect } from 'react'
 import { Link } from "react-router-dom";
 function Shop() {
-    
+    // Get API from - https://docs.fortniteapi.com/
+
     useEffect(() => {
         fetchItems()
     }, [])
