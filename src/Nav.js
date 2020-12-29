@@ -5,7 +5,7 @@ function Nav() {
         <div>
             <nav>
                 <h4>Logo</h4>
-                <ul>
+                <ul className="nav-links">
                     <li>About</li>
                     <li>Shop</li>
                 </ul>
